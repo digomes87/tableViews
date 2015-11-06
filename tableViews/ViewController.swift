@@ -53,12 +53,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         if indexPath.section == 0 {
             let (courseTitle,courseAuthor) = devCourses[indexPath.row]
             cell.textLabel?.text = courseTitle
+            cell.detailTextLabel?.text = courseAuthor
             
         }else{
             
             let (courseTitle,courseAuthor) = webCourses[indexPath.row]
             cell.textLabel?.text = courseTitle
+            cell.detailTextLabel?.text = courseAuthor
         }
+        
+        var myIcon = UIImage(named: "cellIcon")
+            cell.imageView?.image = myIcon
         
         return cell
     }
